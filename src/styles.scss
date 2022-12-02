@@ -1,0 +1,22 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import '~material-icons/iconfont/material-icons.css';
+@import 'https://fonts.googleapis.com/css?family=Nunito';
+
+@import 'styles/loader.scss';
+@import 'styles/color.scss';
+@import 'styles/typography.scss';
+@import 'styles/general.scss';
+@import 'styles/responsive.scss';
+
+@import 'styles/button.scss';
+
+html, body {
+    min-height: 100vh;
+    max-width: 100vw !important;
+    width: 100vw !important;
+    overflow-x: hidden !important;
+    font-family: 'Nunito', sans-serif;
+} 

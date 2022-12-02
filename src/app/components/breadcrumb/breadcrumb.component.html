@@ -1,0 +1,17 @@
+
+<div class="text-sm breadcrumbs">
+    <ul>
+        <li> 
+            <div (click)="appHelper.goToURL('./')" class="pointer" aria-label="Breadcrumb">Home</div> 
+        </li> 
+        <li *ngFor="let breadcrumb of breadcrumbs; let i = index"> 
+            <ng-container *ngIf="i + 1 !== breadcrumbs.length; else standard">
+                <div (click)="appHelper.goToURL(breadcrumb.url)" class="pointer" aria-label="Breadcrumb">{{ breadcrumb.label }}</div> 
+            </ng-container>
+            <ng-template #standard>
+                {{ breadcrumb.label }}
+            </ng-template>
+        </li> 
+    </ul>
+</div>
+      

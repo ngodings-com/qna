@@ -1,0 +1,76 @@
+# stages:
+#   # - test
+#   - build
+#   - deploy
+
+# cache:
+#   policy: pull
+#   paths:
+#     - node_modules/
+
+# image: node:14
+
+# # test:nglint:
+# #   stage: test
+# #   only:
+# #    - develop
+# #    - master
+# #   before_script:
+# #     - npm set cache .npm
+# #     - npm ci
+# #     - npm i -g @angular/cli
+# #   cache:
+# #     paths:
+# #       - .npm
+# #   script:
+# #     - npm run lint
+      
+# build:prod:
+#   stage: build
+#   environment: 
+#     name: prod
+#     url: https://ngodings.com
+#   only: 
+#    - master
+#   before_script:
+#     - npm set cache .npm
+#     - npm ci
+#     - npm install --quiet
+#   cache:
+#     paths:
+#       - .npm
+#   script:
+#     - npm run build:prod
+#   artifacts:
+#     paths:
+#       - dist/ngodings/
+#   except:
+#     variables:
+#       - $CI_COMMIT_MESSAGE =~ /skip-ci/
+
+# deploy:prod:
+#   stage: deploy
+#   environment: 
+#     name: prod
+#     url: https://ngodings.com
+#   only: 
+#    - master
+#   dependencies:
+#     - build:prod
+#   before_script:
+#     - npm set cache .npm
+#     - npm ci
+#     - npm i firebase
+#     - npm i -g firebase-tools
+#   cache:
+#     paths:
+#       - .npm
+#   script:
+#     - npm run use:prod
+#     - npm run target:prod
+#     # - npm run deploy-prod:firestore
+#     # - npm run deploy-prod:storage
+#     - npm run deploy-prod:hosting
+#   except:
+#     variables:
+#       - $CI_COMMIT_MESSAGE =~ /skip-ci/

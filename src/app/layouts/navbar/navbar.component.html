@@ -1,0 +1,70 @@
+
+<div class="navbar text-sm p-layout">
+  <div class="">
+    <div class="dropdown hidden-l">
+      <div tabindex="0" class="btn-humberger pointer pr-4 text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+      </div>
+      <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow rounded-box w-60 menu-mobile bg-white">
+       <li tabindex="0">
+          <div aria-label="Navbar" class="justify-between">
+            Pages
+            <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/></svg>
+          </div>
+          <ul class="menu menu-compact dropdown-content p-2 shadow w-60 submenu">
+            <ng-container *ngFor="let item of appData.pages">
+              <li>
+                <div aria-label="Navbar" (click)="appHelper.goToURL(item?.url)" class="flex justify-between items-center">
+                  <i class="material-icons mr-2" *ngIf="item.icon">{{ item.icon }}</i> {{ item.name }}
+                  <ng-container *ngIf="item.submenus?.length! > 0">
+                    <i class="material-icons">chevron_right</i>
+                  </ng-container>
+                </div> 
+                <ng-container *ngFor="let sub of item.submenus">
+                  <div class="pointer hover submenu-item text-black" (click)="appHelper.goToURL(sub?.url)">
+                    <i class="material-icons mr-2" *ngIf="sub.icon">{{ sub.icon }}</i> {{ sub.name }}
+                  </div>
+                </ng-container>
+              </li>
+            </ng-container>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div aria-label="Navbar" class="pointer" (click)="appHelper.goToURL('/')">
+      <img class="logo" *ngIf="isScroll" src="assets/logo.webp" alt="logo">
+      <img class="logo" *ngIf="!isScroll" src="assets/logo-white.webp" alt="logo">
+    </div>
+  </div>
+  <div class="flex-auto justify-end">
+    <ul class="menu menu-horizontal p-0 hidden-fm flex">
+      <li tabindex="0">
+        <div>
+          Pages
+          <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+        </div>
+        <ul class="menu menu-compact dropdown-content p-2 shadow w-60 submenu">
+          <ng-container *ngFor="let item of appData.pages">
+            <li tabindex="0">
+              <div aria-label="Navbar" (click)="appHelper.goToURL(item?.url)" class="flex justify-between items-center">
+                <i class="material-icons mr-2" *ngIf="item.icon">{{ item.icon }}</i> {{ item.name }}
+                <ng-container *ngIf="item.submenus?.length! > 0">
+                  <i class="material-icons">chevron_right</i>
+                </ng-container>
+              </div>
+              <ul class="menu menu-compact dropdown-content p-2 shadow w-60 submenu" *ngIf="item.submenus?.length! > 0">
+                <ng-container *ngFor="let sub of item.submenus">
+                  <li>
+                    <div aria-label="Navbar" (click)="appHelper.goToURL(sub?.url)">
+                      <i class="material-icons mr-2" *ngIf="sub.icon">{{ sub.icon }}</i> {{ sub.name }}
+                    </div> 
+                  </li>
+                </ng-container>
+              </ul>
+             </li>
+          </ng-container>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>

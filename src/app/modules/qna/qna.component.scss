@@ -1,0 +1,31 @@
+@import 'color.scss';
+
+app-pages-qna {
+    .bg-image {
+        background: url(../../../assets/images/teamwork/group-people-working-out-business-plan-office.webp) center center;
+        position: relative;
+        background-size:     cover;                      
+        background-repeat:   no-repeat;
+        background-position: center center; 
+        object-fit: cover;
+
+    }
+
+    .title {
+        font-size: 24px;
+        font-weight: 600;
+    }
+    
+    .faq {
+        width: 30vw;
+    }
+    .header {
+        position: relative;
+        color: white;
+        z-index: 3;
+    }
+}
+
+    p-dropdown.full, .full.p-dropdown {
+        width: 100%;
+    }

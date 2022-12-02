@@ -1,0 +1,18 @@
+<p-toast position="top-right"></p-toast>
+<div [attr.data-theme]="appData.theme | lowercase">
+    <app-theme></app-theme>
+
+    <div class="layout">
+        <ng-container *ngIf="!appData.isFullPageValue">
+            <app-navbar></app-navbar>
+        </ng-container>
+
+        <router-outlet></router-outlet>
+    </div>
+
+    <ng-container *ngIf="!appData.isFullPageValue">
+        <app-to-top></app-to-top>
+        <app-footer></app-footer>
+        <app-copyright></app-copyright>
+    </ng-container>
+</div>

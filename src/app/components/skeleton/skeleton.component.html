@@ -1,0 +1,11 @@
+<ng-container *ngIf="isCircle">
+    <p-skeleton shape="circle" [width]="width" [height]="height"></p-skeleton>
+</ng-container>
+
+<ng-container *ngIf="isSquare">
+    <p-skeleton [width]="width" [height]="height"></p-skeleton>
+</ng-container>
+
+<ng-container *ngIf="isRounded">
+    <p-skeleton borderRadius="16px" [width]="width" [height]="height"></p-skeleton>
+</ng-container>

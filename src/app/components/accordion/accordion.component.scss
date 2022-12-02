@@ -1,0 +1,10 @@
+@import 'color.scss';
+
+app-accordion {
+    .accordion {
+    }
+
+    .p-accordion .p-accordion-header .p-accordion-header-link {
+        color: black;
+    }
+}

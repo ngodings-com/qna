@@ -1,0 +1,14 @@
+<div class="p-layout footer-bg">
+  <footer class="footer py-10 text-neutral-content">
+    <div>
+      <img class="logo" src="assets/logo-white.webp" alt="footer">
+      <p>Exployee management project.</p>
+    </div> 
+    <div>
+      <span class="footer-title">Pages</span> 
+      <ng-container *ngFor="let item of appData.pages">
+        <div aria-label="Footer" class="link link-hover" (click)="appHelper.goToURL(item.url)">{{ item.name }}</div> 
+      </ng-container>
+    </div> 
+  </footer>
+</div>

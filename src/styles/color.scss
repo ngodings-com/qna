@@ -1,0 +1,31 @@
+.bg-overlay {
+    background-color: rgba(60,72,88,0.7);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.bg-overlay2 {
+    background-color: rgba(60,72,88,0.6);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.bg-gray {
+    background-color: rgb(248, 248, 248) !important;
+}
+
+.text-gray {
+    color: hsl(var(--sc)) !important;
+}

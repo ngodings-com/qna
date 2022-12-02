@@ -1,0 +1,23 @@
+<div class="full-pages flex items-center justify-center">
+    <div class="space-section">
+        <div class="notfound text-center">
+            <img loading="lazy" src="assets/svg/error/error.svg" alt="notfound">
+
+            <div class="text-4xl font-bold mt-10">
+                Oops!
+            </div>
+
+            <div class="text-lg mt-6">
+                We're sorry,
+            </div>
+
+            <div class="text-lg mt-2">
+                The page you were looking for doesn't exist anymore.
+            </div>
+
+            <div class="mt-4">
+                <app-button [isRounded]="true" [title]="'Back to Home'" (callback)="appHelper.goToURL('/')"></app-button>
+            </div>
+        </div>
+    </div>
+</div>

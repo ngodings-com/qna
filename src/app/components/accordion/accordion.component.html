@@ -1,0 +1,11 @@
+
+<p-accordion>
+  <ng-container *ngFor="let data of datas">
+    <p-accordionTab [header]="data.question + '?'" [(selected)]="data.index === activeIndex">
+      {{ data.answer }}
+      <div class="mt-2 text-black">
+        Topic: {{ data.topic }}
+      </div>
+    </p-accordionTab>
+  </ng-container>
+</p-accordion>

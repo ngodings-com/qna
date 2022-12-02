@@ -1,0 +1,16 @@
+<div class="tabs"
+    [class.tabs-boxed]="isBoxed"
+>
+    <ng-container *ngFor="let tab of tabs">
+        <div aria-label="Tab" class="tab" (click)="onCallback(tab)"
+        [class.tab-active]="activeIndex === tab.index"
+        [class.tab-sm]="sizeValue === 'sm'" 
+        [class.tab-md]="sizeValue === 'md'" 
+        [class.tab-lg]="sizeValue === 'lg'" 
+        [class.tab-lifted]="isLifted" 
+        [class.tab-bordered]="isBordered" 
+    >
+        {{ tab.name }}
+    </div>
+    </ng-container> 
+  </div>

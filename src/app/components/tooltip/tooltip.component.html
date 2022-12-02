@@ -1,0 +1,22 @@
+<div class="tooltip"
+    [class.tooltip-primary]="colorValue === 'primary'" 
+    [class.tooltip-secondary]="colorValue === 'secondary'" 
+    [class.tooltip-accent]="colorValue === 'accent'" 
+    [class.tooltip-ghost]="colorValue === 'ghost'" 
+    [class.tooltip-link]="colorValue === 'link'" 
+    [class.tooltip-info]="colorValue === 'info'" 
+    [class.tooltip-success]="colorValue === 'success'" 
+    [class.tooltip-warning]="colorValue === 'warning'" 
+    [class.tooltip-error]="colorValue === 'error'" 
+    [class.tooltip-sm]="sizeValue === 'sm'" 
+    [class.tooltip-md]="sizeValue === 'md'" 
+    [class.tooltip-lg]="sizeValue === 'lg'" 
+    [class.tooltip-top]="alignValue === 'top'" 
+    [class.tooltip-bottom]="alignValue === 'end'" 
+    [class.tooltip-left]="alignValue === 'left'" 
+    [class.tooltip-right]="alignValue === 'right'" 
+    [class.tooltip-open]="isOpen" 
+    [attr.data-tip]="tooltip"
+>
+    <ng-content></ng-content>
+</div>

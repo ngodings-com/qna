@@ -1,0 +1,51 @@
+@import 'color.scss';
+
+@keyframes spin-animation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(100deg);
+    }
+}
+
+app-theme {
+    .theme {
+        position: fixed;
+        left: 0;
+        top: 100px;
+        z-index: 100;
+        i.spin {
+            color: black;
+            font-size: 28px;
+            margin-top: 2px;
+            animation: spin-animation 0.5s infinite;
+            display: inline-block;
+        }
+        .theme-content {
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+            background-color: white;
+            width: 170px;
+            height: 220px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            padding: 10px;
+            .theme-scrolling {
+                overflow: auto;
+                height: 160px;
+            }
+        }
+        .theme-button {
+            background-color: #f5f5f5;
+            padding: 6px 15px 0px 10px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            height: 44px;
+            margin-top: 10px;
+        }
+
+        .theme-name {
+            font-size: 12px;
+        }
+    }
+}
