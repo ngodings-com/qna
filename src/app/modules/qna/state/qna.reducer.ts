@@ -44,6 +44,6 @@ export const reducer = createReducer(
 
 export const qnas = (state: State) => state.qnas;
 export const qnasAll = (state: State) => state.qnasAll;
-export const qnasAllTemp = (state: State) => state.qnasAll;
+export const qnasAllTemp = (state: State) => state.qnasAllTemp;
 export const totalQNAs = (state: State) => state.totalQNAs;
 export const groups = (state: State) => state.groups;

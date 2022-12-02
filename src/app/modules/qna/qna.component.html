@@ -44,6 +44,12 @@
           <app-accordion [datas]="(qnas$ | async)!" [(activeIndex)]="activeIndex"></app-accordion>
         </div>
 
+        <div class="mt-4" *ngIf="(qnas$ | async)!.length === 0 || !(qnas$ | async)!">
+          <div class="items-center flex justify-center">
+            No Question found
+          </div>
+        </div>
+
         <ng-container *ngIf="(qnas$ | async)!.length < (qnasAllTemp$ | async)!.length">
           <div class="items-center flex justify-center mt-4">
             <app-button [isRounded]="true" [title]="'Load More'" (callback)="onLoadMore()" [color]="color.primary"
@@ -55,11 +61,6 @@
           {{ (qnas$ | async)!.length }}/{{ (qnasAllTemp$ | async)!.length }} Question
         </div>
 
-        <div class="mt-4" *ngIf="(qnas$ | async)!.length === 0 || !(qnas$ | async)!">
-          <div class="items-center flex justify-center">
-            No Question found
-          </div>
-        </div>
       </div>
     </ng-container>
 
